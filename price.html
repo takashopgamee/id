@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="id-ID" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daftar Harga — Takashopgame</title>
+<link rel="shortcut icon" href="./assets/img/logo.png">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css">
+<link rel="stylesheet" href="./assets/css/toastr.min.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+<link rel="stylesheet" href="./assets/css/swiper.css">
+<link rel="stylesheet" href="./assets/css/style.css">
+<link rel="stylesheet" type="text/css" href="./assets/css/populers.css">
+<script src="https://code.iconify.design/1/1.0.4/iconify.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body id="body">
+	<!-- NAVBAR START OSAKAA -->
+<button class="btn btn-primary d-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas"></button>
+<div class="offcanvas offcanvas-start" style="z-index : 100 !important" data-bs-scroll="true" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
+	<div class="offcanvas-header">
+		<div class="d-flex align-items-center gap-2">
+			<span class="navigation">Takashopgame.</span>
+		</div>
+		<label class="theme-switch">
+		<input class="toggle-checkbox" id="checkbox" type="checkbox">
+		<div class="switch-icon">
+			<i class="bi bi-brightness-high yellowprim"></i>
+		</div>
+		</label>
+	</div>
+	<div class="offcanvas-body d-flex flex-column justify-content-between">
+		<div class="link-list">
+			<a href="#" class="nav-item-link">
+			<div class="icon-link">
+				<i class="bi bi-house-door-fill"></i>
+			</div>
+			<div class="title">Beranda</div>
+			</a>
+			<a href="#produk" class="nav-item-link">
+			<div class="icon-link">
+				<i class="bi bi-tags-fill"></i>
+			</div>
+			<div class="title">Pricelist</div>
+			</a>
+			<a href="./calc/kalkulator.html" class="nav-item-link">
+			<div class="icon-link">
+				<i class="bi bi-calculator-fill"></i>
+			</div>
+			<div class="title">Kalkulator</div>
+			</a>
+		</div>
+		<div class=" flex align-content-end">
+			<div class="d-flex gap-2 w-100">
+				<a type="button" href="./account/auth/login.html" class="btnYellowPrimary d-inline-flex flex-fill px-3 w-100">Masuk</a>
+				<a type="button" href="./account/auth/register.html" class="btnYellowSecond d-inline-flex flex-fill px-3 w-100">Daftar</a>
+			</div>
+		</div>
+	</div>
+</div>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<div class="container position-relative justify-content-md-center ">
+	<div class="d-flex align-items-center gap-2" id="navLogo">
+		<img src="./assets/img/logo.png" onclick="window.location.href='#'" class="logo " alt="">
+		<span class="logoName ">Takashopgame.</span>
+	</div>
+	
+	<div class="navRight w-100 justify-content-end d-none d-md-flex">
+		<a href="./account/auth/login.html" class="btnYellowPrimary login">Masuk</a>
+		<a href="./account/auth/register.html" class="btnYellowSecond login">Daftar</a>
+		<div class="containerMenu">
+			<div class="dropdown">
+				<button class="dropdownMenu shadow">
+				<i class="bi bi-grid-fill"></i>
+				</button>
+				<div class="dropdown-content">
+					<a href="#">
+					<div class="containers">
+						<i class="bi bi-house-door-fill"></i>
+						<div class="name">Beranda</div>
+					</div>
+					<i class="bi bi-arrow-right-short"></i>
+					</a>
+					<a href="#produk">
+					<div class="containers">
+						<i class="bi bi-tags-fill"></i>
+						<div class="name">Daftar Harga</div>
+					</div>
+					<i class="bi bi-arrow-right-short"></i>
+					</a>
+					<a href="./calc/kalkulator.html">
+					<div class="containers">
+						<i class="bi bi-calculator-fill"></i>
+						<div class="name">Kalkulator</div>
+					</div>
+					<i class="bi bi-arrow-right-short"></i>
+					</a>
+				</div>
+			</div>
+		</div>
+		<label class="theme-switch shadow">
+		<input class="toggle-checkbox" id="checkbox" type="checkbox">
+		<div class="switch-icon">
+			<i class="bi bi-brightness-high yellowprim"></i>
+		</div>
+		</label>
+	</div>
+	<button type="button" aria-label="Display the menu order-1" class="search d-md-none d-block" id="menuCheckbox">
+	<i class="bi bi-list"></i>
+	</button>
+	</nav>
+	<div class="mobileNav" hidden>
+		<a href="#" class="containers active">
+		<i class="bi bi-house-door-fill"></i>
+		<div class="text">Beranda</div>
+		</a>
+		<a href="#produk" class="containers ">
+		<i class="bi bi-tags-fill"></i>
+		<div class="text">Pricelist</div>
+		</a>
+		<a href="./calc/kalkulator.html" class="containers ">
+		<i class="bi bi-calculator-fill"></i>
+		<div class="text">Kalkulator</div>
+		</a>
+		<a href="./account/auth/login.html" class="containers ">
+		<i class="bi bi-person-fill-lock"></i>
+		<div class="text">Login</div>
+		</a>
+	</div>
+	<!-- NAVBAR END OSAKAA -->
+	<section class="container-track">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-md-10">
+				<div class="title-head text-left mb-3 mt-3">Daftar Harga</div>
+				<div class="cards shadow mb-4">
+					<div class="nowrap-left floating-label-content">
+						<label for="games-select" class="cards-title sr-only mb-2">Pilih Game</label>
+						<select class="form-select form-control floating-select" id="games-select" onchange="go_section(this.value);">
+							<option value="2">Free Fire</option>
+							<option value="10">Genshin Impact</option>
+							<option value="1">Mobile Legends</option>
+							<option value="5">PUBG Mobile</option>
+							<option value="10">UniPin Voucher</option>
+						</select>
+					</div>
+					<div class="tab-content mt-3">
+						<div class="tab-pane fade " id="games-1" role="tabpanel">
+							<div class="table-responsive">
+								<table class="table">
+								<tr>
+									<td colspan="4">
+										<h6 class="cards-title pt-4">Mobile Legends</h6>
+									</td>
+								</tr>
+								<tr class="text-dark">
+									<th>Produk</th>
+									<th nowrap="">Harga MLBB</th>
+									<th width="10">Status</th>
+								</tr>
+								<tr class="text-dark">
+									<td style="white-space: nowrap;">MOBILELEGEND - 5 Diamond</td>
+									<td style="white-space: nowrap;">Rp 1.600</td>
+									<td style="white-space: nowrap;">
+										<span class="text-success">Normal</span>
+									</td>
+								</tr>
+								<tr class="text-dark">
+									<td style="white-space: nowrap;">MOBILELEGEND - 28 Diamond</td>
+									<td style="white-space: nowrap;">Rp 8.150</td>
+									<td style="white-space: nowrap;">
+										<span class="text-success">Normal</span>
+									</td>
+								</tr>
+								<tr class="text-dark">
+									<td style="white-space: nowrap;">MOBILELEGEND - 86 Diamond</td>
+									<td style="white-space: nowrap;">Rp 22.900</td>
+									<td style="white-space: nowrap;">
+										<span class="text-success">Normal</span>
+									</td>
+								</tr>
+								<tr class="text-dark">
+									<td style="white-space: nowrap;">MOBILELEGEND - 100 Diamond</td>
+									<td style="white-space: nowrap;">Rp 26.900</td>
+									<td style="white-space: nowrap;">
+										<span class="text-success">Normal</span>
+									</td>
+								</tr>
+								<tr class="text-dark">
+									<td style="white-space: nowrap;">MOBILELEGEND - 112 Diamond</td>
+									<td style="white-space: nowrap;">Rp 29.800</td>
+									<td style="white-space: nowrap;">
+										<span class="text-success">Normal</span>
+									</td>
+								</tr>
+								<tr class="text-dark">
+									<td style="white-space: nowrap;">MOBILELEGEND - 170 Diamond</td>
+									<td style="white-space: nowrap;">Rp 43.500</td>
+									<td style="white-space: nowrap;">
+										<span class="text-success">Normal</span>
+									</td>
+								</tr>
+								<tr class="text-dark">
+									<td style="white-space: nowrap;">MOBILELEGEND - 257 Diamond</td>
+									<td style="white-space: nowrap;">Rp 65.500</td>
+									<td style="white-space: nowrap;">
+										<span class="text-success">Normal</span>
+									</td>
+								</tr>
+								<tr class="text-dark">
+									<td style="white-space: nowrap;">MOBILELEGEND - 284 Diamond</td>
+									<td style="white-space: nowrap;">Rp 71.900</td>
+									<td style="white-space: nowrap;">
+										<span class="text-success">Normal</span>
+									</td>
+								</tr>
+								<tr class="text-dark">
+									<td style="white-space: nowrap;">MOBILELEGEND - 300 Diamond</td>
+									<td style="white-space: nowrap;">Rp 76.000</td>
+									<td style="white-space: nowrap;">
+										<span class="text-success">Normal</span>
+									</td>
+								</tr>
+								<tr class="text-dark">
+									<td style="white-space: nowrap;">MOBILELEGEND - 344 Diamond</td>
+									<td style="white-space: nowrap;">Rp 87.500</td>
+									<td style="white-space: nowrap;">
+										<span class="text-success">Normal</span>
+									</td>
+								</tr>
+								<tr class="text-dark">
+									<td style="white-space: nowrap;">MOBILELEGEND - 355 Diamond</td>
+									<td style="white-space: nowrap;">Rp 90.000</td>
+									<td style="white-space: nowrap;">
+										<span class="text-success">Normal</span>
+									</td>
+								</tr>
+								
+								</table>
+							</div>
+						</div>
+						<div class="tab-pane fade show active" id="games-2" role="tabpanel">
+							<div class="table-responsive">
+								<table class="table">
+								<tr>
+									<td colspan="4">
+										<h6 class="cards-title pt-4">Free Fire</h6>
+									</td>
+								</tr>
+								<tr class="text-dark">
+									<th>Produk</th>
+									<th nowrap="">Harga FF</th>
+									<th width="10">Status</th>
+								</tr>
+								<tr class="text-dark">
+									<td style="white-space: nowrap;">Free Fire 5 Diamond</td>
+									<td style="white-space: nowrap;">Rp 969</td>
+									<td style="white-space: nowrap;">
+										<span class="text-success">Normal</span>
+									</td>
+								</tr>
+								<tr class="text-dark">
+									<td style="white-space: nowrap;">Free Fire 20 Diamond</td>
+									<td style="white-space: nowrap;">Rp 4.658</td>
+									<td style="white-space: nowrap;">
+										<span class="text-success">Normal</span>
+									</td>
+								</tr>
+								<tr class="text-dark">
+									<td style="white-space: nowrap;">Free Fire 50 Diamond</td>
+									<td style="white-space: nowrap;">Rp 7.658</td>
+									<td style="white-space: nowrap;">
+										<span class="text-success">Normal</span>
+									</td>
+								</tr>
+								<tr class="text-dark">
+									<td style="white-space: nowrap;">Free Fire 70 Diamond</td>
+									<td style="white-space: nowrap;">Rp 10.195</td>
+									<td style="white-space: nowrap;">
+										<span class="text-success">Normal</span>
+									</td>
+								</tr>
+								<tr class="text-dark">
+									<td style="white-space: nowrap;">Free Fire 100 Diamond</td>
+									<td style="white-space: nowrap;">Rp 14.346</td>
+									<td style="white-space: nowrap;">
+										<span class="text-success">Normal</span>
+									</td>
+								</tr>
+								<tr class="text-dark">
+									<td style="white-space: nowrap;">Free Fire 120 Diamond</td>
+									<td style="white-space: nowrap;">Rp 17.000</td>
+									<td style="white-space: nowrap;">
+										<span class="text-success">Normal</span>
+									</td>
+								</tr>
+								<tr class="text-dark">
+									<td style="white-space: nowrap;">Free Fire 140 Diamond</td>
+									<td style="white-space: nowrap;">Rp 19.289</td>
+									<td style="white-space: nowrap;">
+										<span class="text-success">Normal</span>
+									</td>
+								</tr>
+								<tr class="text-dark">
+									<td style="white-space: nowrap;">Free Fire 200 Diamond</td>
+									<td style="white-space: nowrap;">Rp 28.000</td>
+									<td style="white-space: nowrap;">
+										<span class="text-success">Normal</span>
+									</td>
+								</tr>
+								<tr class="text-dark">
+									<td style="white-space: nowrap;">Free Fire 250 Diamond</td>
+									<td style="white-space: nowrap;">Rp 34.241</td>
+									<td style="white-space: nowrap;">
+										<span class="text-success">Normal</span>
+									</td>
+								</tr>
+								<tr class="text-dark">
+									<td style="white-space: nowrap;">Free Fire 355 Diamond</td>
+									<td style="white-space: nowrap;">Rp 47.220</td>
+									<td style="white-space: nowrap;">
+										<span class="text-success">Normal</span>
+									</td>
+								</tr>
+								<tr class="text-dark">
+									<td style="white-space: nowrap;">Free Fire 425 Diamond</td>
+									<td style="white-space: nowrap;">Rp 56.000</td>
+									<td style="white-space: nowrap;">
+										<span class="text-success">Normal</span>
+									</td>
+								</tr>
+								<tr class="text-dark">
+									<td style="white-space: nowrap;">Free Fire 500 Diamond</td>
+									<td style="white-space: nowrap;">Rp 66.000</td>
+									<td style="white-space: nowrap;">
+										<span class="text-success">Normal</span>
+									</td>
+								</tr>
+								<tr class="text-dark">
+									<td style="white-space: nowrap;">Free Fire 720 Diamond</td>
+									<td style="white-space: nowrap;">Rp 92.555.000</td>
+									<td style="white-space: nowrap;">
+										<span class="text-success">Normal</span>
+									</td>
+								</tr>
+								<tr class="text-dark">
+									<td style="white-space: nowrap;">Free Fire 1050 Diamond</td>
+									<td style="white-space: nowrap;">Rp 136.000</td>
+									<td style="white-space: nowrap;">
+										<span class="text-success">Normal</span>
+									</td>
+								</tr>	
+								<tr class="text-dark">
+									<td style="white-space: nowrap;">Free Fire 1450 Diamond</td>
+									<td style="white-space: nowrap;">Rp 185.680</td>
+									<td style="white-space: nowrap;">
+										<span class="text-success">Normal</span>
+									</td>
+								</tr>
+								<tr class="text-dark">
+									<td style="white-space: nowrap;">Free Fire 2180 Diamond</td>
+									<td style="white-space: nowrap;">Rp 279.000</td>
+									<td style="white-space: nowrap;">
+										<span class="text-success">Normal</span>
+									</td>
+								</tr>																							
+								</table>
+							</div>
+						</div>
+						<div class="tab-pane fade " id="games-5" role="tabpanel">
+							<div class="table-responsive">
+								<table class="table">
+								<tr>
+									<td colspan="4">
+										<h6 class="cards-title pt-4">PUBG Mobile</h6>
+									</td>
+								</tr>
+								<tr class="text-dark">
+									<th>Produk</th>
+									<th nowrap="">Harga PUBG</th>
+									<th width="10">Status</th>
+								</tr>
+								<tr class="text-dark">
+									<td style="white-space: nowrap;">PUBG MOBILE 25 UC</td>
+									<td style="white-space: nowrap;">Rp 8.000</td>
+									<td style="white-space: nowrap;">
+										<span class="text-success">Normal</span>
+									</td>
+								</tr>
+								<tr class="text-dark">
+									<td style="white-space: nowrap;">PUBG MOBILE 50 UC</td>
+									<td style="white-space: nowrap;">Rp 13.000</td>
+									<td style="white-space: nowrap;">
+										<span class="text-success">Normal</span>
+									</td>
+								</tr>
+								<tr class="text-dark">
+									<td style="white-space: nowrap;">PUBG MOBILE 60 UC</td>
+									<td style="white-space: nowrap;">Rp 16.100</td>
+									<td style="white-space: nowrap;">
+										<span class="text-success">Normal</span>
+									</td>
+								</tr>
+								<tr class="text-dark">
+									<td style="white-space: nowrap;">PUBG MOBILE 70 UC</td>
+									<td style="white-space: nowrap;">Rp 20.500</td>
+									<td style="white-space: nowrap;">
+										<span class="text-success">Normal</span>
+									</td>
+								</tr>
+								<tr class="text-dark">
+									<td style="white-space: nowrap;">PUBG MOBILE 150 UC</td>
+									<td style="white-space: nowrap;">Rp 33.000</td>
+									<td style="white-space: nowrap;">
+										<span class="text-success">Normal</span>
+									</td>
+								</tr>
+								<tr class="text-dark">
+									<td style="white-space: nowrap;">PUBG MOBILE 210 UC</td>
+									<td style="white-space: nowrap;">Rp 45.100</td>
+									<td style="white-space: nowrap;">
+										<span class="text-success">Normal</span>
+									</td>
+								</tr>
+								<tr class="text-dark">
+									<td style="white-space: nowrap;">PUBG MOBILE 350 UC</td>
+									<td style="white-space: nowrap;">Rp 72.900</td>
+									<td style="white-space: nowrap;">
+										<span class="text-success">Normal</span>
+									</td>
+								</tr>
+								<tr class="text-dark">
+									<td style="white-space: nowrap;">PUBG MOBILE 525 UC</td>
+									<td style="white-space: nowrap;">Rp 110.880</td>
+									<td style="white-space: nowrap;">
+										<span class="text-success">Normal</span>
+									</td>
+								</tr>
+								<tr class="text-dark">
+									<td style="white-space: nowrap;">PUBG MOBILE 700 UC</td>
+									<td style="white-space: nowrap;">Rp 142.000</td>
+									<td style="white-space: nowrap;">
+										<span class="text-success">Normal</span>
+									</td>
+								</tr>
+								<tr class="text-dark">
+									<td style="white-space: nowrap;">PUBG MOBILE 1100 UC</td>
+									<td style="white-space: nowrap;">Rp 227.000</td>
+									<td style="white-space: nowrap;">
+										<span class="text-success">Normal</span>
+									</td>
+								</tr>
+								<tr class="text-dark">
+									<td style="white-space: nowrap;">PUBG MOBILE 2500 UC</td>
+									<td style="white-space: nowrap;">Rp 454.300</td>
+									<td style="white-space: nowrap;">
+										<span class="text-success">Normal</span>
+									</td>
+								</tr>
+								</table>
+							</div>
+						</div>
+						<div class="tab-pane fade " id="games-10" role="tabpanel">
+							<div class="table-responsive">
+								<table class="table">
+								<tr>
+									<td colspan="4">
+										<h6 class="cards-title pt-4">Genshin Impact</h6>
+									</td>
+								</tr>
+								<tr class="text-dark">
+									<th>Produk</th>
+									<th nowrap="">Harga Crystal</th>
+									<th width="10">Status</th>
+								</tr>
+								<tr class="text-dark">
+									<td style="white-space: nowrap;">60 CRYSTAL GENESIS</td>
+									<td style="white-space: nowrap;">Rp 11.985</td>
+									<td style="white-space: nowrap;">
+										<span class="text-success">Normal</span>
+									</td>
+								</tr>
+								<tr class="text-dark">
+									<td style="white-space: nowrap;">330 CRYSTAL GENESIS</td>
+									<td style="white-space: nowrap;">Rp 57.400</td>
+									<td style="white-space: nowrap;">
+										<span class="text-success">Normal</span>
+									</td>
+								</tr>
+								<tr class="text-dark">
+									<td style="white-space: nowrap;">1090 CRYSTAL GENESIS</td>
+									<td style="white-space: nowrap;">Rp 169.500</td>
+									<td style="white-space: nowrap;">
+										<span class="text-success">Normal</span>
+									</td>
+								</tr> 
+								<tr class="text-dark">
+									<td style="white-space: nowrap;">2240 CRYSTAL GENESIS</td>
+									<td style="white-space: nowrap;">Rp 366.500</td>
+									<td style="white-space: nowrap;">
+										<span class="text-success">Normal</span>
+									</td>
+								</tr>
+								<tr class="text-dark">
+									<td style="white-space: nowrap;">3380 CRYSTAL GENESIS</td>
+									<td style="white-space: nowrap;">Rp 563.000</td>
+									<td style="white-space: nowrap;">
+										<span class="text-success">Normal</span>
+									</td>
+								</tr>
+								<tr class="text-dark">
+									<td style="white-space: nowrap;">8080 CRYSTAL GENESIS</td>
+									<td style="white-space: nowrap;">Rp 1.131.200</td>
+									<td style="white-space: nowrap;">
+										<span class="text-success">Normal</span>
+									</td>
+								</tr>																													
+								</table>
+							</div>
+						</div>
+						<div class="tab-pane fade " id="games-15" role="tabpanel">
+							<div class="table-responsive">
+								<table class="table">
+								<tr>
+									<td colspan="4">
+										<h6 class="cards-title pt-4">Clash Of Clans</h6>
+									</td>
+								</tr>
+								<tr class="text-dark">
+									<th>Produk</th>
+									<th nowrap="">Harga Gems</th>
+									<th width="10">Status</th>
+								</tr>
+								<tr class="text-dark">
+									<td style="white-space: nowrap;">80 GEMS COC</td>
+									<td style="white-space: nowrap;">Rp 13.985</td>
+									<td style="white-space: nowrap;">
+										<span class="text-success">Normal</span>
+									</td>
+								</tr>
+								<tr class="text-dark">
+									<td style="white-space: nowrap;">500 GEMS COC</td>
+									<td style="white-space: nowrap;">Rp 61.400</td>
+									<td style="white-space: nowrap;">
+										<span class="text-success">Normal</span>
+									</td>
+								</tr>
+								<tr class="text-dark">
+									<td style="white-space: nowrap;">1200 GEMS COC</td>
+									<td style="white-space: nowrap;">Rp 124.500</td>
+									<td style="white-space: nowrap;">
+										<span class="text-success">Normal</span>
+									</td>
+								</tr>
+								<tr class="text-dark">
+									<td style="white-space: nowrap;">2500 GEMS COC</td>
+									<td style="white-space: nowrap;">Rp 251.500</td>
+									<td style="white-space: nowrap;">
+										<span class="text-success">Normal</span>
+									</td>
+								</tr>
+								<tr class="text-dark">
+									<td style="white-space: nowrap;">6500 GEMS COC</td>
+									<td style="white-space: nowrap;">Rp 624.000</td>
+									<td style="white-space: nowrap;">
+										<span class="text-success">Normal</span>
+									</td>
+								</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="h-40"></div>
+	<div class="footer">
+		<div class="container">
+			<div class="logo">
+				<img src="https://kiosgames.id/trial/assets/images/1685096996_98e6f7ee5dd56b4ed29b.png" alt="logo"/>
+				<div class="names">Kiosgames</div>
+			</div>
+			<div class="desc mx-auto">
+				 Kiosgames menyediakan layanan Top up game dan Reseller Voucher Game termurah dan terpercaya di Indonesia.
+			</div>
+			<div class="sosmed">
+				<a href="https://instagram.com/" class="containers text-white"><i class="bi bi-instagram"></i></a>
+				<a href="https://tiktok.com/" class="containers text-white"><i class="bi bi-tiktok"></i></a>
+				<a href="https://facebook.com/" class="containers text-white"><i class="bi bi-facebook"></i></a>
+			</div>
+			<div class="bottomFoot">
+				<div class="copyright">
+					<div class="text">
+						 Copyright ©
+						<script>document.write(new Date().getFullYear());</script>
+						<a href="https://kiosgames.id/trial" class="text-white">Kiosgames</a> - All Right Reserved
+					</div>
+				</div>
+				<div class="linkFoot">
+					<div class="containers">
+						<a href="https://kiosgames.id/trial">Home</a>
+						<a href="https://kiosgames.id/trial/#produk">Topup</a>
+						<a href="https://kiosgames.id/trial/terms">Syarat & Ketentuan</a>
+						<a href="https://kiosgames.id/trial/kontak">Hubungi Kami</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</section>
+	<a href="https://wa.me/6285293026542" class="floating-contact d-flex justify-content-center gap-1 flex-column contact" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Contact CS Kami Via Whatsapp"><span class="text-white">CHAT CS</span></a>
+	<a id="backToTopBtn" onclick="scrollToTop()" class="floating-btu d-flex justify-content-center gap-1 flex-column contact" tabindex="0"><i class="bi bi-arrow-up"></i></a>
+	<script src="https://kiosgames.id/trial/assets/js/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+	<script src="https://kiosgames.id/trial/assets/js/script.js"></script>
+	<script>
+	  setInterval(function() {
+		  $("#toolbarContainer").remove();
+	  }, 500);
+	  function salin(text, label_text) {
+		  navigator.clipboard.writeText(text);
+		  toastr.success(label_text);
+	  }
+	  document.addEventListener("contextmenu", function (e) {
+  e.preventDefault();
+  alert("Sorry, Inspect element is disabled.");
+});
+    document.onkeydown = function (e) {
+      if (event.keyCode == 123) {
+        return false;
+      }
+      if (e.ctrlKey && e.shiftKey && e.keyCode == "I".charCodeAt(0)) {
+        return false;
+      }
+      if (e.ctrlKey && e.shiftKey && e.keyCode == "C".charCodeAt(0)) {
+        return false;
+      }
+      if (e.ctrlKey && e.shiftKey && e.keyCode == "J".charCodeAt(0)) {
+        return false;
+      }
+      if (e.ctrlKey && e.keyCode == "U".charCodeAt(0)) {
+        return false;
+      }
+    };
+  </script>
+	<script>
+		function go_section(id) {
+			var buttons = document.querySelectorAll('.btnNavTabs');
+			buttons.forEach(function(button) {
+				button.classList.remove('active');
+			});
+			var activeButton = document.querySelector('.btnNavTabs[data-bs-target="#games-' + id + '"]');
+			if (activeButton) {
+				activeButton.classList.add('active');
+			}
+			var tabs = document.querySelectorAll('.tab-pane');
+			tabs.forEach(function(tab) {
+				tab.classList.remove('show', 'active');
+			});
+			var activeTab = document.querySelector('#games-' + id);
+			if (activeTab) {
+				activeTab.classList.add('show', 'active');
+			}
+		}
+	</script>
+	</body>
+	</html>

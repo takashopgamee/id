@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Takashopgame.</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 h-screen flex items-center justify-center" style="background-color: #0e1221;">
+    <div class="max-w-md w-full p-6 bg-white rounded-lg shadow-md">
+        <h2 class="text-center text-2xl font-semibold mb-6">Login</h2>
+        <form id="loginForm" class="space-y-4">
+            <div>
+                <label for="loginUsername" class="block mb-1">Username</label>
+                <input type="text" id="loginUsername" name="loginUsername" class="w-full border border-black rounded-md px-4 py-2 focus:outline-none focus:border-blue-400" required>
+            </div>
+            <div>
+                <label for="loginPassword" class="block mb-1">Password</label>
+                <input type="password" id="loginPassword" name="loginPassword" class="w-full border border-black rounded-md px-4 py-2 focus:outline-none focus:border-blue-400" required>
+            </div>
+            <button type="button" onclick="submitLoginForm()" class="w-full bg-blue-500 text-white rounded-md py-2">Login</button>
+        </form>
+        <p class="text-center mt-4">Belum memiliki akun? <a href="./register.html" class="text-blue-500">Daftar sekarang</a></p>
+    </div>
+
+    <script>
+        function submitLoginForm() {
+            // Implementasi validasi formulir di sini jika diperlukan
+
+            // Contoh validasi sederhana
+            var form = document.getElementById("loginForm");
+            var username = document.getElementById("loginUsername").value;
+            var password = document.getElementById("loginPassword").value;
+
+            if (username === "" || password === "") {
+                Swal.fire({
+                    title: "Error!",
+                    text: "Silakan isi semua kolom formulir dengan benar.",
+                    icon: "error",
+                    confirmButtonText: "OK"
+                });
+            } else {
+                // Proses login di sini (misalnya, memanggil API)
+
+                // Tampilkan SweetAlert untuk login berhasil
+                Swal.fire({
+                    title: "Login Berhasil!",
+                    text: "Selamat datang, " + username + "!",
+                    icon: "success",
+                    confirmButtonText: "OK"
+                }).then((result) => {
+                    // Redirect ke halaman setelah menekan tombol OK
+                    if (result.isConfirmed) {
+                        window.location.href = "../../index.html";
+                    }
+                });
+            }
+        }
+    </script>
+</body>
+</html>

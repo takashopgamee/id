@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar - Takashopgame.</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 h-screen flex items-center justify-center" style="background-color:#0e1221;">
+    <div class="max-w-md w-full p-6 bg-white rounded-lg shadow-md">
+        <h2 class="text-center text-2xl font-semibold mb-6">Daftar</h2>
+        <form id="registerForm" class="space-y-4">
+            <div>
+                <label for="registerUsername" class="block mb-1">Username</label>
+                <input type="text" id="registerUsername" name="registerUsername" class="w-full border border-black rounded-md px-4 py-2 focus:outline-none focus:border-blue-400" required>
+            </div>
+            <div>
+                <label for="registerEmail" class="block mb-1">Email</label>
+                <input type="email" id="registerEmail" name="registerEmail" class="w-full border border-black rounded-md px-4 py-2 focus:outline-none focus:border-blue-400" required>
+            </div>
+            <div>
+                <label for="registerWhatsapp" class="block mb-1">Nomor WhatsApp</label>
+                <input type="text" id="registerWhatsapp" name="registerWhatsapp" class="w-full border border-black rounded-md px-4 py-2 focus:outline-none focus:border-blue-400" placeholder="628xxxxx" required>
+            </div>
+            <div>
+                <label for="registerPassword" class="block mb-1">Password</label>
+                <input type="password" id="registerPassword" name="registerPassword" class="w-full border border-black rounded-md px-4 py-2 focus:outline-none focus:border-blue-400" required>
+            </div>
+            <div>
+                <label for="confirmPassword" class="block mb-1">Konfirmasi Password</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" class="w-full border border-black rounded-md px-4 py-2 focus:outline-none focus:border-blue-400" required>
+            </div>
+            <button type="button" onclick="submitRegisterForm()" class="w-full bg-blue-500 text-white rounded-md py-2">Register</button>
+        </form>
+        <p class="text-center mt-4">Sudah memiliki akun? <a href="./login.html" class="text-blue-500">Login sekarang</a></p>
+    </div>
+
+    <script>
+        function submitRegisterForm() {
+            // Implementasi validasi formulir di sini jika diperlukan
+
+            // Contoh validasi sederhana
+            var form = document.getElementById("registerForm");
+            var username = document.getElementById("registerUsername").value;
+            var email = document.getElementById("registerEmail").value;
+            var whatsapp = document.getElementById("registerWhatsapp").value;
+            var password = document.getElementById("registerPassword").value;
+            var confirmPassword = document.getElementById("confirmPassword").value;
+
+            if (username === "" || email === "" || whatsapp === "" || password === "" || confirmPassword === "") {
+                Swal.fire({
+                    title: "Error!",
+                    text: "Silakan isi semua kolom formulir dengan benar.",
+                    icon: "error",
+                    confirmButtonText: "OK"
+                });
+            } else if (password !== confirmPassword) {
+                Swal.fire({
+                    title: "Error!",
+                    text: "Konfirmasi password tidak sesuai.",
+                    icon: "error",
+                    confirmButtonText: "OK"
+                });
+            } else {
+                // Proses registrasi di sini (misalnya, memanggil API)
+
+                // Tampilkan SweetAlert untuk registrasi berhasil
+                Swal.fire({
+                    title: "Registrasi Berhasil!",
+                    text: "Akun Anda berhasil didaftarkan.",
+                    icon: "success",
+                    confirmButtonText: "OK"
+                }).then((result) => {
+                    // Redirect ke halaman setelah menekan tombol OK
+                    if (result.isConfirmed) {
+                        window.location.href = "login.html";
+                    }
+                });
+            }
+        }
+    </script>
+</body>
+</html>

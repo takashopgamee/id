@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="id-ID" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Instagram Views - Takashopgame.</title>
+ 	<link rel="shortcut icon" href="../assets/img/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="stylesheet" href="../assets/css/swiper.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="https://code.iconify.design/1/1.0.4/iconify.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body id="body">
+<button class="btn btn-primary d-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas"></button>
+<div class="offcanvas offcanvas-start" style="z-index : 100 !important" data-bs-scroll="true" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
+	<div class="offcanvas-header">
+		<div class="d-flex align-items-center gap-2">
+			<span class="navigation">Takashopgame.</span>
+		</div>
+		<label class="theme-switch">
+		<input class="toggle-checkbox" id="checkbox" type="checkbox">
+		<div class="switch-icon">
+			<i class="bi bi-brightness-high yellowprim"></i>
+		</div>
+		</label>
+	</div>
+	<div class="offcanvas-body d-flex flex-column justify-content-between">
+		<div class="link-list">
+			<a href="../index.html" class="nav-item-link">
+			<div class="icon-link">
+				<i class="bi bi-house-door-fill"></i>
+			</div>
+			<div class="title">Beranda</div>
+			</a>
+			<a href="../index.html" class="nav-item-link">
+			<div class="icon-link">
+				<i class="bi bi-tags-fill"></i>
+			</div>
+			<div class="title">Pricelist</div>
+			</a>
+			<a href="../calc/kalkulator.html" class="nav-item-link">
+			<div class="icon-link">
+				<i class="bi bi-calculator-fill"></i>
+			</div>
+			<div class="title">Kalkulator</div>
+			</a>
+		</div>
+		<div class=" flex align-content-end">
+			<div class="d-flex gap-2 w-100">
+			</div>
+		</div>
+	</div>
+</div>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<div class="container position-relative justify-content-md-center ">
+	<div class="d-flex align-items-center gap-2" id="navLogo">
+		<img src="../assets/img/logo.png" onclick="window.location.href='#'" class="logo " alt="">
+		<span class="logoName ">Takashopgame</span>
+	</div>
+	<div class="collapse navbar-collapse order-2 " id="navbarNavDropdown">
+		<div class="py-3 d-flex d-md-none " id="navSearch">
+		</div>
+	</div>
+	<div class="navRight w-100 justify-content-end d-none d-md-flex">
+		<div class="containerMenu">
+			<div class="dropdown">
+				<button class="dropdownMenu shadow">
+				<i class="bi bi-grid-fill"></i>
+				</button>
+				<div class="dropdown-content">
+					<a href="../index.html">
+					<div class="containers">
+						<i class="bi bi-house-door-fill"></i>
+						<div class="name">Beranda</div>
+					</div>
+					<i class="bi bi-arrow-right-short"></i>
+					</a>
+					<a href="../index.html">
+					<div class="containers">
+						<i class="bi bi-tags-fill"></i>
+						<div class="name">Daftar Harga</div>
+					</div>
+					<i class="bi bi-arrow-right-short"></i>
+					</a>
+					<a href="../calc/kalkulator.html">
+					<div class="containers">
+						<i class="bi bi-calculator-fill"></i>
+						<div class="name">Kalkulator</div>
+					</div>
+					<i class="bi bi-arrow-right-short"></i>
+					</a>
+				</div>
+			</div>
+		</div>
+		<label class="theme-switch shadow">
+		<input class="toggle-checkbox" id="checkbox" type="checkbox">
+		<div class="switch-icon">
+			<i class="bi bi-brightness-high yellowprim"></i>
+		</div>
+		</label>
+	</div>
+	<button type="button" aria-label="Display the menu order-1" class="search d-md-none d-block" id="menuCheckbox">
+	<i class="bi bi-list"></i>
+	</button>
+	</nav>
+	<div class="mobileNav" hidden>
+		<a href="../index.html" class="containers ">
+		<i class="bi bi-house-door-fill"></i>
+		<div class="text">Beranda</div>
+		</a>
+		<a href="../index.html" class="containers ">
+		<i class="bi bi-tags-fill"></i>
+		<div class="text">Pricelist</div>
+		</a>
+		<a href="../calc/kalkulator.html" class="containers ">
+		<i class="bi bi-calculator-fill"></i>
+		<div class="text">Kalkulator</div>
+		</a>
+	</div>
+	<section>
+	<div class="container">
+		<div class="desc mb-3">
+			<span class="txt-primary">
+			<a href="../index.html">Home</a>
+			</span>
+			<span class="mx-2">/</span>Views Instagram
+		</div>
+		<div class="containerAlpha">
+			<img src="../assets/img/banner/banner_ig.png" alt="" class="banner">
+			<div class="containerML">
+				<img src="../assets/img/icon/banner_ig.png" alt="" class="logo-ml" style="width:300px;">
+			</div>
+		</div>
+			<div class="containerNominal">
+				<div class="row reverse">
+					<div class="col-lg-8">
+						<div class="cards py-3 mb-4">
+							<div class="title-card text-left">
+								 Views Instagram <span class="ms-2"><i class="bi bi-patch-check-fill"></i></span>
+							</div>
+							<div class="text" style="color: var(--black-text)">
+								<p>
+									 Suntik Views Aman, Cepat Dan harga paling murah. Cara suntik Views IG termurah : <br>
+									 <b>1. </b> Masukkan Link Postingan Instagram <br>
+									 <b>2. </b> Pilih Nominal Views <br>
+									 <b>3. </b> Pilih Pembayaran <br>
+									 <b>4. </b> Tulis No WhatsApp <br>
+									 <b>5. </b> Klik Order Now & lakukan Pembayaran <br>
+								</p>
+							</div>
+						</div>
+						<div class="cards py-3 mb-4">
+							<div class="title-card text-left" style="margin-bottom: 2rem;">Pilih Nominal</div>
+							<div class="row">
+								<div class="col-md-4 col-6">
+									<input type="radio" name="product" id="product-365"class="nom-radio"/>
+									<label for="product-365" class="containerChoice">
+									<div class="containerIcon" hidden>
+										<i class="bi bi-check-lg"></i>
+									</div>
+
+									<div class="mx-auto">
+										<div class="text">
+											<div class="desc">100 Views Instagram</div>
+											<div class="count">Rp 75</div>
+										</div>
+									</div>
+									</label>
+								</div>
+
+								<div class="col-md-4 col-6">
+									<input type="radio" name="product" id="product-366" class="nom-radio"/>
+									<label for="product-366" class="containerChoice">
+									<div class="containerIcon" hidden>
+										<i class="bi bi-check-lg"></i>
+									</div>
+									<div class="mx-auto">
+										<div class="text">
+											<div class="desc">200 Views Instagram</div>
+											<div class="count">Rp 100</div>
+										</div>
+									</div>
+									</label>
+								</div>
+
+								<div class="col-md-4 col-6">
+									<input type="radio" name="product" id="product-367" class="nom-radio"/>
+									<label for="product-367" class="containerChoice">
+									<div class="containerIcon" hidden>
+										<i class="bi bi-check-lg"></i>
+									</div>
+									<div class="mx-auto">
+										<div class="text">
+											<div class="desc">300 Views Instagram</div>
+											<div class="count">Rp 150</div>
+										</div>
+									</div>
+									</label>
+								</div>
+
+								<div class="col-md-4 col-6">
+									<input type="radio" name="product" id="product-368" class="nom-radio"/>
+									<label for="product-368" class="containerChoice">
+									<div class="containerIcon" hidden>
+										<i class="bi bi-check-lg"></i>
+									</div>
+									<div class="mx-auto">
+										<div class="text">
+											<div class="desc">500 Views Instagram</div>
+											<div class="count">Rp 326</div>
+										</div>
+									</div>
+									</label>
+								</div>
+
+								<div class="col-md-4 col-6">
+									<input type="radio" name="product" id="product-369" class="nom-radio"/>
+									<label for="product-369" class="containerChoice">
+									<div class="containerIcon" hidden>
+										<i class="bi bi-check-lg"></i>
+									</div>
+									<div class="mx-auto">
+										<div class="text">
+											<div class="desc">1000 Views Instagram</div>
+											<div class="count">Rp 800</div>
+										</div>
+									</div>
+									</label>
+								</div>
+
+								<div class="col-md-4 col-6">
+									<input type="radio" name="product" id="product-370" class="nom-radio"/>
+									<label for="product-370" class="containerChoice">
+									<div class="containerIcon" hidden>
+										<i class="bi bi-check-lg"></i>
+									</div>
+									<div class="mx-auto">
+										<div class="text">
+											<div class="desc">1500 Views Instagram</div>
+											<div class="count">Rp 1.000</div>
+										</div>
+									</div>
+									</label>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4">
+						<div class="accordion">
+							<div class="cards mb-4 d-flex flex-column gap-3" id="section-method">
+								<div class="title-card text-left">Masukkan Link Postingan</div>
+								<div class="floating-label-content">
+									<input type="text" class="form-control games-input floating-input"  id="nickname" placeholder=" "/>
+									<label class="floating-label">Link Postingan</label>	
+								</div>
+								<div class="note">Note : <br> 1. Kesalahan Mengisi Bukan Tanggung Jawab Admin ! <br> 2. Akun <b>Tidak Boleh Di Private Wajib Bersifat Public<b></div>
+							</div>
+							<div class="cards mb-4">
+								<div class="title-card text-left" style="margin-bottom: 2rem !important;">Metode Pembayaran</div>
+								<div class="accordion mb-2">
+									<div class="accordionHeadPay" style="background: var(--dark-grey);">
+										<div class="title">E-Money</div>
+										<div class="containers">
+											<img src="../assets/img/method/qris.png" alt=""/>
+											<img src="../assets/img/method/dana.svg" alt=""/>
+											<img src="../assets/img/method/ovo.svg" alt=""/>
+										</div>
+										<i class="bi bi-caret-right-fill"></i>
+									</div>
+									<div class="accordionBodyPay">
+										<div class="accordionContent">
+											<div class="row">
+												<div class="col-sm-12">
+													<input type="radio" name="method" class="pay-radio" id="method-12" onchange="select_method('12', 'QRIS');"/>
+													<label for="method-12" class="choicePay">
+													<div class="containers">
+														<div class="icon">
+															<i class="bi bi-check-lg"></i>
+														</div>
+														<div class="text">
+															<div class="name">QRIS</div>
+															<div class="price" id="method-12price"></div>
+														</div>
+													</div>
+													<img src="../assets/img/method/qris.png" width="60" alt=""/>
+													</label>
+												</div>
+												<div class="col-sm-12">
+													<input type="radio" name="method" class="pay-radio" id="method-7" onchange="select_method('7', 'DANA');"/>
+													<label for="method-7" class="choicePay">
+													<div class="containers">
+														<div class="icon">
+															<i class="bi bi-check-lg"></i>
+														</div>
+														<div class="text">
+															<div class="name">DANA</div>
+															<div class="price" id="method-7price"></div>
+														</div>
+													</div>
+													<img src="../assets/img/method/dana.svg" width="60" alt=""/>
+													</label>
+												</div>
+												<div class="col-sm-12">
+													<input type="radio" name="method" class="pay-radio" id="method-6" onchange="select_method('6', 'OVO');"/>
+													<label for="method-6" class="choicePay">
+													<div class="containers">
+														<div class="icon">
+															<i class="bi bi-check-lg"></i>
+														</div>
+														<div class="text">
+															<div class="name">OVO</div>
+															<div class="price" id="method-6price"></div>
+														</div>
+													</div>
+													<img src="../assets/img/method/ovo.svg" width="60" alt=""/>
+													</label>
+												</div>
+												<div class="col-sm-12">
+													<input type="radio" name="method" class="pay-radio" id="method-5" onchange="select_method('5', 'Shopee Pay');"/>
+													<label for="method-5" class="choicePay">
+													<div class="containers">
+														<div class="icon">
+															<i class="bi bi-check-lg"></i>
+														</div>
+														<div class="text">
+															<div class="name">Shopee Pay</div>
+															<div class="price" id="method-5price"></div>
+														</div>
+													</div>
+													<img src="../assets/img/method/shopeepay.svg" width="60" alt=""/>
+													</label>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="accordion mb-2">
+									<div class="accordionHeadPay" style="background: var(--dark-grey);">
+										<div class="title">Virtual Account</div>
+										<div class="containers">
+											<img src="../assets/img/method/mandiri.svg" alt=""/>
+										</div>
+										<i class="bi bi-caret-right-fill"></i>
+									</div>
+									<div class="accordionBodyPay">
+										<div class="accordionContent">
+											<div class="row">
+												<div class="col-sm-12">
+													<div class="col-sm-12">
+														<input type="radio" name="method" class="pay-radio" id="method-8" onchange="select_method('8', 'MANDIRI');"/>
+														<label for="method-8" class="choicePay">
+														<div class="containers">
+															<div class="icon">
+																<i class="bi bi-check-lg"></i>
+															</div>
+															<div class="text">
+																<div class="name">MANDIRI</div>
+																<div class="price" id="method-8price"></div>
+															</div>
+														</div>
+														<img src="../assets/img/method/mandiri.svg" width="60" alt=""/>
+														</label>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								</label>
+							</div>
+							<div class="cards mb-4 d-flex flex-column gap-3" id="section-method">
+								<div class="title-card text-left">Detail Kontak</div>
+								<div class="floating-label-content">
+									<input type="number" class="form-control floating-input" name="wa" id="wa" placeholder=" " value=""/>
+									<label class="floating-label" for="wa">No. Whatsapp</label>
+									<div class="note">*Status transaksi akan dikirim via whatsapp</div>
+								</div>
+								<div>
+									<input type="hidden" name="tombol" value="submit"/>
+									<button id="orderButton" class="btnYellowPrimary w-100 mt-2"><i class="bi bi-cart-check-fill"></i>&nbsp;Order Now</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</form>
+</div>
+</section>
+<div class="footer">
+<div class="container">
+	<div class="logo">
+		<img src="../assets/img/logo.png" alt="logo"/>
+		<div class="names">Takashopgame</div>
+	</div>
+	<div class="desc mx-auto">
+		 Takashopgame menyediakan layanan Top up game dan Reseller Voucher Game termurah dan terpercaya di Indonesia.
+	</div>
+	<div class="sosmed">
+		<a href="https://instagram.com/takashopgame.id" class="containers text-white"><i class="bi bi-instagram"></i></a>
+		<a href="https://wa.me/6289654791642" class="containers text-white"><i class="bi bi-whatsapp"></i></a>
+		<a href="https://www.youtube.com/channel/UCUU0TcNiiy4Tmp-kGPf9Muw" class="containers text-white"><i class="bi bi-youtube"></i></a>
+	</div>
+	<div class="bottomFoot">
+		<div class="copyright">
+			<div class="text">
+				 Copyright ©
+				<script>document.write(new Date().getFullYear());</script>
+				<a href="../index.html" class="text-white">Takashopgame.</a> - All Right Reserved
+			</div>
+		</div>
+		<div class="linkFoot">
+			<div class="containers">
+				<a href="../index.html">Home</a>
+				<a href="../index.html/#produk">Topup</a>
+				<a href="../terms">Syarat & Ketentuan</a>
+				<a href="https://s.id/Osakaa">Hubungi Kami</a>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+
+<a href="https://wa.me/6289654791642" class="floating-contact d-flex justify-content-center gap-1 flex-column contact" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Contact CS Kami Via Whatsapp"><span class="text-white">CHAT CS</span></a>
+<a id="backToTopBtn" onclick="scrollToTop()" class="floating-btu d-flex justify-content-center gap-1 flex-column contact" tabindex="0"><i class="bi bi-arrow-up"></i></a>
+
+<!-- MODAL -->
+		<div class="modal fade" id="modal-confirm" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered" style="max-width:600px">
+				<div class="modal-content py-5">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="ticketDetail page" id="orderDetails">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="../assets/js/script.js"></script>
+    <script src="../assets/js/key.js"></script>
+ <script>
+        document.getElementById('orderButton').addEventListener('click', function() {
+            var selectedProduct = document.querySelector('input[name="product"]:checked');
+            var userID = document.getElementById('nickname').value;
+            var selectedMethod = document.querySelector('input[name="method"]:checked');
+            var whatsapp = document.getElementById('wa').value;
+
+            // Cek jika nickname tidak kosong
+            if (userID.trim() === '' || !selectedProduct || !selectedMethod || whatsapp.trim() === '') {
+                toastr.error('Lengkapi Seluruh Data');
+                return; // Stop eksekusi fungsi jika nickname kosong
+            }
+
+            var productLabel = selectedProduct.nextElementSibling.querySelector('.desc').textContent;
+            var paymentMethod = selectedMethod.nextElementSibling.querySelector('.name').textContent;
+            var price = document.querySelector('input[name="product"]:checked').nextElementSibling.querySelector('.count').textContent;
+            var wa = document.getElementById('wa').value;
+
+            var orderDetails = `
+                <div class="head text-center text-white">Detail Pembelian</div>
+                <div class="containers">
+                    <div class="title text-white">Link Postingan : ${userID}</div>
+                    <div class="desc"></div>
+                </div>
+                <div class="containers">
+                    <div class="title text-white">Produk : ${productLabel}</div>
+                    <div class="desc leading-none"></div>
+                </div>
+                <div class="containers">
+                    <div class="title text-white">Harga Bayar : ${price}</div>
+                    <div class="desc"></div>
+                </div>
+                <div class="containers">
+                    <div class="title text-white">Metode Pembayaran : ${paymentMethod}</div>
+                    <div class="desc"></div>
+                </div>
+                <div class="containers">
+                    <div class="title text-white">No. WhatsApp : ${wa}</div>
+                    <div class="desc"></div>
+                </div>
+                <div class="note text-white">
+                Note : Harap cek kembali pesanan anda, Karena Kesalahan mengisi bukan tanggung jawab admin
+                </div>
+                <button type="button" onclick="order_process()" id="btn-order-process" class="btn btn-primary w-100 mt-3" style="border-radius: 10px;"><i class="bi bi-bag-check-fill"></i>&nbsp;
+                    Bayar Sekarang
+                </button>
+                <button type="button" onclick="closePopupModal()" class="btn btn-secondary w-100 mt-2" style="border-radius: 10px;"><i class="bi bi-cart-x-fill"></i>&nbsp;
+                    Batal
+                </button>
+            `;
+
+            document.getElementById('orderDetails').innerHTML = orderDetails;
+            var modal_confirm = new bootstrap.Modal(document.getElementById('modal-confirm'), {
+                keyboard: false
+            });
+            modal_confirm.show();
+        });
+
+        function order_process() {
+            var selectedProduct = document.querySelector('input[name="product"]:checked');
+            var userID = document.getElementById('nickname').value;
+            var selectedMethod = document.querySelector('input[name="method"]:checked');
+            var wa = document.getElementById('wa').value;
+
+            // Validasi jika ada data yang belum diisi
+            if (!selectedProduct || !selectedMethod || userID.trim() === '' || wa.trim() === '') {
+                toastr.error('Lengkapi Seluruh Data');
+                return;
+            }
+
+            var productLabel = selectedProduct.nextElementSibling.querySelector('.desc').textContent;
+            var userID = document.getElementById('nickname').value;
+            var paymentMethod = selectedMethod.nextElementSibling.querySelector('.name').textContent;
+            var price = document.querySelector('input[name="product"]:checked').nextElementSibling.querySelector('.count').textContent;
+            var wa = document.getElementById('wa').value;
+
+
+            // Bangun pesan untuk WhatsApp
+            var message = "*_Detail Pesanan :_*\n" +
+            "_Link Postingan :_ " + userID + "\n" +
+            "_Produk :_ " + productLabel + "\n" +
+            "_Harga :_ " + price + "\n" +
+            "_Metode Pembayaran :_ " + paymentMethod + "\n" +
+            "_No. WhatsApp :_ " + wa;
+            var whatsappLink = "https://api.whatsapp.com/send?phone=6289654791642&text=*Halo%20Admin,%20Saya%20Mau%20Suntik%20Followers*.%0A%0A" + encodeURIComponent(message);
+            // Buka link WhatsApp di tab baru
+            window.open(whatsappLink, '_blank');
+        }
+    </script>
+        <script>
+
+        // Fungsi untuk menutup modal saat tombol "Tutup" diklik
+        function closePopupModal() {
+            $('#modal-confirm').modal('hide');
+        }
+    </script>
+</body>
+</html>

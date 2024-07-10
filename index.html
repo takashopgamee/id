@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="id-ID" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- TITLE WEBSITE OSAKAA -->
+<title>Takashopgame - Topup Termurah Se Indonesia</title>
+<link rel="shortcut icon" href="./assets/img/logo.png">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css">
+<link rel="stylesheet" href="./assets/css/toastr.min.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+<link rel="stylesheet" href="./assets/css/swiper.css">
+<link rel="stylesheet" href="./assets/css/style.css">
+<link rel="stylesheet" type="text/css" href="./assets/css/populers.css">
+<script src="https://code.iconify.design/1/1.0.4/iconify.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body id="body">
+	<!-- NAVBAR START OSAKAA -->
+<button class="btn btn-primary d-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas"></button>
+<div class="offcanvas offcanvas-start" style="z-index : 100 !important" data-bs-scroll="true" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
+	<div class="offcanvas-header">
+		<div class="d-flex align-items-center gap-2">
+			<span class="navigation">Takashopgame.</span>
+		</div>
+		<label class="theme-switch">
+		<input class="toggle-checkbox" id="checkbox" type="checkbox">
+		<div class="switch-icon">
+			<i class="bi bi-brightness-high yellowprim"></i>
+		</div>
+		</label>
+	</div>
+	<div class="offcanvas-body d-flex flex-column justify-content-between">
+		<div class="link-list">
+			<a href="#" class="nav-item-link">
+			<div class="icon-link">
+				<i class="bi bi-house-door-fill"></i>
+			</div>
+			<div class="title">Beranda</div>
+			</a>
+			<a href="./price.html" class="nav-item-link">
+			<div class="icon-link">
+				<i class="bi bi-tags-fill"></i>
+			</div>
+			<div class="title">Pricelist</div>
+			</a>
+			<a href="./calc/kalkulator.html" class="nav-item-link">
+			<div class="icon-link">
+				<i class="bi bi-calculator-fill"></i>
+			</div>
+			<div class="title">Kalkulator</div>
+			</a>
+		</div>
+		<div class=" flex align-content-end">
+			<div class="d-flex gap-2 w-100">
+				<a type="button" href="./account/auth/login.html" class="btnYellowPrimary d-inline-flex flex-fill px-3 w-100">Masuk</a>
+				<a type="button" href="./account/auth/register.html" class="btnYellowSecond d-inline-flex flex-fill px-3 w-100">Daftar</a>
+			</div>
+		</div>
+	</div>
+</div>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<div class="container position-relative justify-content-md-center ">
+	<div class="d-flex align-items-center gap-2" id="navLogo">
+		<img src="./assets/img/logo.png" onclick="window.location.href='#'" class="logo " alt="">
+		<span class="logoName ">Takashopgame</span>
+	</div>
+	
+	<div class="navRight w-100 justify-content-end d-none d-md-flex">
+		<a href="./account/auth/login.html" class="btnYellowPrimary login">Masuk</a>
+		<a href="./account/auth/register.html" class="btnYellowSecond login">Daftar</a>
+		<div class="containerMenu">
+			<div class="dropdown">
+				<button class="dropdownMenu shadow">
+				<i class="bi bi-grid-fill"></i>
+				</button>
+				<div class="dropdown-content">
+					<a href="#">
+					<div class="containers">
+						<i class="bi bi-house-door-fill"></i>
+						<div class="name">Beranda</div>
+					</div>
+					<i class="bi bi-arrow-right-short"></i>
+					</a>
+					<a href="./price.html">
+					<div class="containers">
+						<i class="bi bi-tags-fill"></i>
+						<div class="name">Daftar Harga</div>
+					</div>
+					<i class="bi bi-arrow-right-short"></i>
+					</a>
+					<a href="./calc/kalkulator.html">
+					<div class="containers">
+						<i class="bi bi-calculator-fill"></i>
+						<div class="name">Kalkulator</div>
+					</div>
+					<i class="bi bi-arrow-right-short"></i>
+					</a>
+				</div>
+			</div>
+		</div>
+		<label class="theme-switch shadow">
+		<input class="toggle-checkbox" id="checkbox" type="checkbox">
+		<div class="switch-icon">
+			<i class="bi bi-brightness-high yellowprim"></i>
+		</div>
+		</label>
+	</div>
+	<button type="button" aria-label="Display the menu order-1" class="search d-md-none d-block" id="menuCheckbox">
+	<i class="bi bi-list"></i>
+	</button>
+	</nav>
+	<div class="mobileNav" hidden>
+		<a href="#" class="containers active">
+		<i class="bi bi-house-door-fill"></i>
+		<div class="text">Beranda</div>
+		</a>
+		<a href="./price.html" class="containers ">
+		<i class="bi bi-tags-fill"></i>
+		<div class="text">Pricelist</div>
+		</a>
+		<a href="./calc/kalkulator.html" class="containers ">
+		<i class="bi bi-calculator-fill"></i>
+		<div class="text">Kalkulator</div>
+		</a>
+		<a href="./account/auth/login.html" class="containers ">
+		<i class="bi bi-person-fill-lock"></i>
+		<div class="text">Login</div>
+		</a>
+	</div>
+	<!-- NAVBAR END OSAKAA -->
+
+	<!-- SLIDER START OSAKAA -->
+	<section>
+	<div class="container">
+		<!-- Banner -->
+		<div class="containerBanner">
+			<div class="swiper swiperBanner">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide banner" style="width: 366px;">
+						<div class="banner-img" onclick="window.location.href='#'">
+							<img src="./assets/img/banner/slider04.jpg" alt="">
+						</div>
+					</div>
+					<div class="swiper-slide banner" style="width: 366px;">
+						<div class="banner-img" onclick="window.location.href='#'">
+							<img src="./assets/img/banner/slider03.jpg" alt="">
+						</div>
+					</div>
+					<div class="swiper-slide banner" style="width: 366px;">
+						<div class="banner-img" onclick="window.location.href='#'">
+							<img src="./assets/img/banner/slider02.jpg" alt="">
+						</div>
+					</div>
+					<div class="swiper-slide banner" style="width: 366px;">
+						<div class="banner-img" onclick="window.location.href='#'">
+							<img src="./assets/img/banner/slider01.jpg" alt="">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- SLIDER END OSAKAA -->
+
+		<!-- Populer Start -->
+
+		<div class="containerPopuler mb-4">
+	<div class="title-head" style="text-align: left; margin-top: 10px; margin-bottom: 20px;">Populer Saat Ini</div>
+	<div class="row g-2 g-lg-3">
+		<div class="col-6 col-md-4">
+			<a href="./order/mobile-legends.html" class="card-populer shadow">
+			<div class="card-populer-content" style="background-image: url(./assets/img/populer/mlbb.jpg);">
+				<div class="card-populer-img">
+					<img src="./assets/img/populer/mlbb.jpg" alt="Mobile Legends" loading="lazy">
+				</div>
+				<div class="card-populer-text">
+					<span>Moonton</span>
+					<h1>Mobile Legends</h1>
+				</div>
+				<div class="mask"></div>
+			</div>
+			</a>
+		</div>
+		<div class="col-6 col-md-4">
+			<a href="./order/valorant.html" class="card-populer shadow">
+			<div class="card-populer-content" style="background-image: url(./assets/img/populer/valo.jpg);">
+				<div class="card-populer-img">
+					<img src="./assets/img/populer/valo.jpg" alt="Valorant" loading="lazy">
+				</div>
+				<div class="card-populer-text">
+					<span>Riot Games</span>
+					<h1>Valorant</h1>
+				</div>
+				<div class="mask"></div>
+			</div>
+			</a>
+		</div>
+		<div class="col-6 col-md-4">
+			<a href="./order/genshin-impact.html" class="card-populer shadow">
+			<div class="card-populer-content" style="background-image: url(./assets/img/populer/genshin.jpg);">
+				<div class="card-populer-img">
+					<img src="./assets/img/populer/genshin.jpg" alt="Genshin Impact" loading="lazy">
+				</div>
+				<div class="card-populer-text">
+					<span>HoYoverse</span>
+					<h1>Genshin Impact</h1>
+				</div>
+				<div class="mask"></div>
+			</div>
+			</a>
+		</div>
+
+		<div class="col-6 col-md-4">
+			<a href="./order/free-fire.html" class="card-populer shadow">
+			<div class="card-populer-content" style="background-image: url(./assets/img/populer/ff.jpg);">
+				<div class="card-populer-img">
+					<img src="./assets/img/populer/ff.jpg" alt="Free Fire" loading="lazy">
+				</div>
+				<div class="card-populer-text">
+					<span>Garena</span>
+					<h1>Free Fire</h1>
+				</div>
+				<div class="mask"></div>
+			</div>
+			</a>
+		</div>
+	</div>
+</div>
+
+
+		<!-- Populer End -->
+
+		<!-- Games -->
+		<div class="containerProduct" id="produk">
+			<ul class="nav navTabs" id="myTab" role="tablist">
+				<li class="nav-item" role="presentation">
+					<button class="btnNavTabs active" id="topup-games-tab" data-bs-toggle="tab" data-bs-target="#topup-games" type="button" role="tab">
+					<div class="icon">
+						<i class="bi bi-controller"></i>
+					</div>
+					<div class="text">Topup Games</div>
+					</button>
+				</li>
+
+				<li class="nav-item" role="presentation">
+					<button class="btnNavTabs " id="joki-tab" data-bs-toggle="tab" data-bs-target="#joki" type="button" role="tab">
+					<div class="icon">
+						<i class="bi bi-controller"></i>
+					</div>
+					<div class="text">Joki Mlbb</div>
+					</button>
+				</li>
+
+				<li class="nav-item" role="presentation">
+					<button class="btnNavTabs " id="suntik-tab" data-bs-toggle="tab" data-bs-target="#suntik" type="button" role="tab">
+					<div class="icon">
+						<i class="bi bi-rocket-takeoff"></i>
+					</div>
+					<div class="text">Suntik Sosmed</div>
+					</button>
+				</li>
+
+				<li class="nav-item" role="presentation">
+					<button class="btnNavTabs " id="voucher-application-tab" data-bs-toggle="tab" data-bs-target="#voucher-application" type="button" role="tab">
+					<div class="icon">
+						<i class="bi bi-ticket-detailed-fill"></i>
+					</div>
+					<div class="text">Voucher & Application</div>
+					</button>
+				</li>
+
+				<li class="nav-item" role="presentation">
+					<button class="btnNavTabs " id="pulsa-paket-data-tab" data-bs-toggle="tab" data-bs-target="#pulsa-paket-data" type="button" role="tab">
+					<div class="icon">
+						<i class="bi bi-arrow-down-up"></i>
+					</div>
+					<div class="text">Pulsa & Paket Data</div>
+					</button>
+				</li>
+			</ul>
+
+			<!-- TOPUP GAMES START OSAKAA -->
+
+			<div class="tab-content" id="myTabContent">
+				<div class="tab-pane fade show active" id="topup-games" role="tabpanel">
+					<div class="row g-2 g-lg-3">
+						<div class="col-lg-2 col-md-3 col-4 mb-lg-3 mb-md-2 col-sm-4">
+							<div class="containers shadow">
+								<a href="./order/mobile-legends.html">
+								<img src="./assets/img/product/mlbb.jpg" class="product-img" alt=""/>
+								<div class="mask"></div>
+								<div class="desc px-3">
+									<div class="game">Mobile Legends</div>
+									<div class="vendor">Moonton</div>
+								</div>
+								</a>
+							</div>
+						</div>
+
+						<div class="col-lg-2 col-md-3 col-4 mb-lg-3 mb-md-2 col-sm-4">
+							<div class="containers shadow">
+								<a href="./order/free-fire.html">
+								<img src="./assets/img/product/ff.jpg" class="product-img" alt=""/>
+								<div class="mask"></div>
+								<div class="desc px-3">
+									<div class="game">Free Fire</div>
+									<div class="vendor">Garena</div>
+								</div>
+								</a>
+							</div>
+						</div>
+
+						<div class="col-lg-2 col-md-3 col-4 mb-lg-3 mb-md-2 col-sm-4">
+							<div class="containers shadow">
+								<a href="./order/pubg-mobile.html">
+								<img src="./assets/img/product/pubg.jpg" class="product-img" alt=""/>
+								<div class="mask"></div>
+								<div class="desc px-3">
+									<div class="game">PUBG Mobile</div>
+									<div class="vendor">Tencent</div>
+								</div>
+								</a>
+							</div>
+						</div>
+
+						<div class="col-lg-2 col-md-3 col-4 mb-lg-3 mb-md-2 col-sm-4">
+							<div class="containers shadow">
+								<a href="./order/genshin-impact.html">
+								<img src="./assets/img/product/genshin.jpg" class="product-img" alt=""/>
+								<div class="mask"></div>
+								<div class="desc px-3">
+									<div class="game">Genshin Impact</div>
+									<div class="vendor">Mihoyo</div>
+								</div>
+								</a>
+							</div>
+						</div>
+
+						<div class="col-lg-2 col-md-3 col-4 mb-lg-3 mb-md-2 col-sm-4">
+							<div class="containers shadow">
+								<a href="./order/call-of-duty.html">
+								<img src="./assets/img/product/codm.jpg" class="product-img" alt=""/>
+								<div class="mask"></div>
+								<div class="desc px-3">
+									<div class="game">Call Of Duty</div>
+									<div class="vendor">Garean Mobile Private</div>
+								</div>
+								</a>
+							</div>
+						</div>
+
+						<div class="col-lg-2 col-md-3 col-4 mb-lg-3 mb-md-2 col-sm-4">
+							<div class="containers shadow">
+								<a href="./order/valorant.html">
+								<img src="./assets/img/product/valo.jpg" class="product-img" alt=""/>
+								<div class="mask"></div>
+								<div class="desc px-3">
+									<div class="game">Valorant</div>
+									<div class="vendor">Riot Games</div>
+								</div>
+								</a>
+							</div>
+						</div>
+
+<!-- 						<div class="col-lg-2 col-md-3 col-4 mb-lg-3 mb-md-2 col-sm-4">
+							<div class="containers shadow">
+								<a href="./order/clash-of-clans.html">
+								<img src="./assets/img/product/coc.jpg" class="product-img" alt=""/>
+								<div class="mask"></div>
+								<div class="desc px-3">
+									<div class="game">Clash of Clans</div>
+									<div class="vendor">Supercell</div>
+								</div>
+								</a>
+							</div>
+						</div> -->
+
+					</div>
+				</div>
+
+				<!-- TOPUP GAME END OSAKAA -->
+
+				<!-- SUNTIK SOSMED START OSAKAA -->
+
+				<div class="tab-pane fade " id="suntik" role="tabpanel">
+					<div class="row g-2 g-lg-3">
+						<div class="col-lg-2 col-md-3 col-4 mb-lg-3 mb-md-2 col-sm-4">
+							<div class="containers shadow">
+								<a href="./order/ig-bot.html">
+								<img src="./assets/img/product/ig-bot.png" class="product-img" alt=""/>
+								<div class="mask"></div>
+								<div class="desc px-3">
+									<div class="game">Followers Instagram Bot</div>
+									<div class="vendor">Meta</div>
+								</div>
+								</a>
+							</div>
+						</div>
+
+						<div class="col-lg-2 col-md-3 col-4 mb-lg-3 mb-md-2 col-sm-4">
+							<div class="containers shadow">
+								<a href="./order/ig-indo.html">
+								<img src="./assets/img/product/ig-indo.png" class="product-img" alt=""/>
+								<div class="mask"></div>
+								<div class="desc px-3">
+									<div class="game">Followers Instagram Indonesia</div>
+									<div class="vendor">Meta</div>
+								</div>
+								</a>
+							</div>
+						</div>
+
+						<div class="col-lg-2 col-md-3 col-4 mb-lg-3 mb-md-2 col-sm-4">
+							<div class="containers shadow">
+								<a href="./order/ig-like.html">
+								<img src="./assets/img/product/ig-like.png" class="product-img" alt=""/>
+								<div class="mask"></div>
+								<div class="desc px-3">
+									<div class="game">Like Instagram</div>
+									<div class="vendor">Meta</div>
+								</div>
+								</a>
+							</div>
+						</div>
+
+						<div class="col-lg-2 col-md-3 col-4 mb-lg-3 mb-md-2 col-sm-4">
+							<div class="containers shadow">
+								<a href="./order/ig-views.html">
+								<img src="./assets/img/product/ig-views.png" class="product-img" alt=""/>
+								<div class="mask"></div>
+								<div class="desc px-3">
+									<div class="game">Views Instagram</div>
+									<div class="vendor">Meta</div>
+								</div>
+								</a>
+							</div>
+						</div>
+
+						<div class="col-lg-2 col-md-3 col-4 mb-lg-3 mb-md-2 col-sm-4">
+							<div class="containers shadow">
+								<a href="./order/tt-foll.html">
+								<img src="./assets/img/product/tt-foll.png" class="product-img" alt=""/>
+								<div class="mask"></div>
+								<div class="desc px-3">
+									<div class="game">Followers Tiktok</div>
+									<div class="vendor">Meta</div>
+								</div>
+								</a>
+							</div>
+						</div>
+
+						<div class="col-lg-2 col-md-3 col-4 mb-lg-3 mb-md-2 col-sm-4">
+							<div class="containers shadow">
+								<a href="./order/tt-like.html">
+								<img src="./assets/img/product/tt-like.png" class="product-img" alt=""/>
+								<div class="mask"></div>
+								<div class="desc px-3">
+									<div class="game">Like Tiktok</div>
+									<div class="vendor">Meta</div>
+								</div>
+								</a>
+							</div>
+						</div>
+
+						<div class="col-lg-2 col-md-3 col-4 mb-lg-3 mb-md-2 col-sm-4">
+							<div class="containers shadow">
+								<a href="./order/tt-views.html">
+								<img src="./assets/img/product/tt-views.png" class="product-img" alt=""/>
+								<div class="mask"></div>
+								<div class="desc px-3">
+									<div class="game">Views Tiktok</div>
+									<div class="vendor">Meta</div>
+								</div>
+								</a>
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+
+				<!-- SUNTIK SOSMED END OSAKAA -->
+
+				<!-- JOKI ML START OSAKAA -->
+
+				<div class="tab-pane fade " id="joki" role="tabpanel">
+					<div class="row g-2 g-lg-3">
+						<div class="col-lg-2 col-md-3 col-4 mb-lg-3 mb-md-2 col-sm-4">
+							<div class="containers shadow">
+								<a href="./order/joki-rank.html">
+								<img src="./assets/img/product/joki_rank.jpg" class="product-img" alt=""/>
+								<div class="mask"></div>
+								<div class="desc px-3">
+									<div class="game">Joki Rank</div>
+									<div class="vendor">Moonton</div>
+								</div>
+								</a>
+							</div>
+						</div>
+
+						<div class="col-lg-2 col-md-3 col-4 mb-lg-3 mb-md-2 col-sm-4">
+							<div class="containers shadow">
+								<a href="./order/joki-gendong.html">
+								<img src="./assets/img/product/joki_gendong.jpg" class="product-img" alt=""/>
+								<div class="mask"></div>
+								<div class="desc px-3">
+									<div class="game">Joki Gendong</div>
+									<div class="vendor">Moonton</div>
+								</div>
+								</a>
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+				<!-- JOKI ML END OSAKAA -->
+
+				<!-- VOUCHER START OSAKAA -->
+
+				<div class="tab-pane fade " id="voucher-application" role="tabpanel">
+					<div class="row g-2 g-lg-3">
+						<div class="col-lg-2 col-md-3 col-4 mb-lg-3 mb-md-2 col-sm-4">
+							<div class="containers shadow">
+								<a href="./error.html">
+								<img src="./assets/img/product/garena.jpg" class="product-img" alt=""/>
+								<div class="mask"></div>
+								<div class="desc px-3">
+									<div class="game">Garena: Shell Top Up</div>
+									<div class="vendor">Sea</div>
+								</div>
+								</a>
+							</div>
+						</div>
+
+						<div class="col-lg-2 col-md-3 col-4 mb-lg-3 mb-md-2 col-sm-4">
+							<div class="containers shadow">
+								<a href="./error.html">
+								<img src="./assets/img/product/gp.jpg" class="product-img" alt=""/>
+								<div class="mask"></div>
+								<div class="desc px-3">
+									<div class="game">Google Play</div>
+									<div class="vendor">Google</div>
+								</div>
+								</a>
+							</div>
+						</div>
+
+						<div class="col-lg-2 col-md-3 col-4 mb-lg-3 mb-md-2 col-sm-4">
+							<div class="containers shadow">
+								<a href="./error.html">
+								<img src="./assets/img/product/viu.jpg" class="product-img" alt=""/>
+								<div class="mask"></div>
+								<div class="desc px-3">
+									<div class="game">Viu Premium</div>
+									<div class="vendor">PCCW Media</div>
+								</div>
+								</a>
+							</div>
+						</div>
+
+						<div class="col-lg-2 col-md-3 col-4 mb-lg-3 mb-md-2 col-sm-4">
+							<div class="containers shadow">
+								<a href="./error.html">
+								<img src="./assets/img/product/wetv.jpg" class="product-img" alt=""/>
+								<div class="mask"></div>
+								<div class="desc px-3">
+									<div class="game">WeTV</div>
+									<div class="vendor">Image Future Investment</div>
+								</div>
+								</a>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+				<!-- VOUCHER END OSAKAA -->
+
+				<!-- PULSA START OSAKAA -->
+
+				<div class="tab-pane fade " id="pulsa-paket-data" role="tabpanel">
+					<div class="row g-2 g-lg-3">
+						<div class="col-lg-2 col-md-3 col-4 mb-lg-3 mb-md-2 col-sm-4">
+							<div class="containers shadow">
+								<a href="./error.html">
+								<img src="./assets/img/product/tri.jpg" class="product-img" alt=""/>
+								<div class="mask"></div>
+								<div class="desc px-3">
+									<div class="game">Tri</div>
+									<div class="vendor">PT Indosat Tbk</div>
+								</div>
+								</a>
+							</div>
+						</div>
+
+						<div class="col-lg-2 col-md-3 col-4 mb-lg-3 mb-md-2 col-sm-4">
+							<div class="containers shadow">
+								<a href="./error.html">
+								<img src="./assets/img/product/axis.jpg" class="product-img" alt=""/>
+								<div class="mask"></div>
+								<div class="desc px-3">
+									<div class="game">Axis</div>
+									<div class="vendor">PT XL Axiata Tbk.</div>
+								</div>
+								</a>
+							</div>
+						</div>
+
+						<div class="col-lg-2 col-md-3 col-4 mb-lg-3 mb-md-2 col-sm-4">
+							<div class="containers shadow">
+								<a href="./error.html">
+								<img src="./assets/img/product/im3.jpg" class="product-img" alt=""/>
+								<div class="mask"></div>
+								<div class="desc px-3">
+									<div class="game">Indosat</div>
+									<div class="vendor">Indosat Ooredoo Hutchison</div>
+								</div>
+								</a>
+							</div>
+						</div>
+
+						<div class="col-lg-2 col-md-3 col-4 mb-lg-3 mb-md-2 col-sm-4">
+							<div class="containers shadow">
+								<a href="./error.html">
+								<img src="./assets/img/product/smartfren.jpg" class="product-img" alt=""/>
+								<div class="mask"></div>
+								<div class="desc px-3">
+									<div class="game">Smartfren</div>
+									<div class="vendor">Smartfren Telecom</div>
+								</div>
+								</a>
+							</div>
+						</div>
+
+						<div class="col-lg-2 col-md-3 col-4 mb-lg-3 mb-md-2 col-sm-4">
+							<div class="containers shadow">
+								<a href="./error.html">
+								<img src="./assets/img/product/telkom.jpg" class="product-img" alt=""/>
+								<div class="mask"></div>
+								<div class="desc px-3">
+									<div class="game">Telkomsel</div>
+									<div class="vendor">PT TELEKOMUNIKASI SELULAR</div>
+								</div>
+								</a>
+							</div>
+						</div>
+
+						<div class="col-lg-2 col-md-3 col-4 mb-lg-3 mb-md-2 col-sm-4">
+							<div class="containers shadow">
+								<a href="./error.html">
+								<img src="https://kiosgames.id/trial/assets/images/games/1696921211_4f14e2c7916e139604dd.jpg" class="product-img" alt=""/>
+								<div class="mask"></div>
+								<div class="desc px-3">
+									<div class="game">XL</div>
+									<div class="vendor">XL Axiata</div>
+								</div>
+								</a>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- PULSA END OSAKAA -->	
+
+
+	<!-- TESTIMONI START OSAKAA -->
+	<div class="subContent">
+		<!-- CTA -->
+		<div class="containerTestimoni">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-5">
+						<div class="trusted-text">Dipercaya oleh ribuan pengguna</div>
+						<div class="desc-text">Takashopgame dipercaya oleh Para gamers profesional</div>
+						<div class="subdesc-text">
+							Takashopgame menyediakan layanan Top up game dan Reseller Voucher Game termurah dan terpercaya di Indonesia.
+						</div>
+						<div class="containerUsers mb-lg-3 mb-md-2">
+							<div class="containers">
+								<div class="count">32+</div>
+								<div class="title">Pengguna</div>
+							</div>
+							<div class="containers">
+								<div class="count">18+</div>
+								<div class="title">Games</div>
+							</div>
+							<div class="containers">
+								<div class="count">83+</div>
+								<div class="title">Product</div>
+							</div>
+							<div class="containers">
+								<div class="count">17+</div>
+								<div class="title">Transaksi</div>
+							</div>
+						</div>
+						<a href="" class="btnYellowPrimary d-inline-flex px-3 mt-4">Topup Sekarang<i class="bi bi-arrow-right-short ms-2 mt-1"></i></a>
+					</div>
+					<div class="col-lg-7">
+						<div class="swiper swiperTesti">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide testimoni">
+									<div class="cards">
+										<div class="containers">
+											<div class="rate">
+												<i class="bi bi-star-fill"></i>
+												<i class="bi bi-star-fill"></i>
+												<i class="bi bi-star-fill"></i>
+												<i class="bi bi-star-fill"></i>
+												<i class="bi bi-star-fill"></i>
+											</div>
+											<div class="gameNm">Mobile Legends</div>
+											<div class="desc">Mantap min</div>
+											<div class="name">Renaldi Adriansah</div>
+											<div class="contentBot">
+												<div class="invoice text-sm">TRX**********20</div>
+												<div class="invoice text-sm">14 Oct 23</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide testimoni">
+									<div class="cards">
+										<div class="containers">
+											<div class="rate">
+												<i class="bi bi-star-fill"></i>
+												<i class="bi bi-star-fill"></i>
+												<i class="bi bi-star-fill"></i>
+												<i class="bi bi-star-fill"></i>
+												<i class="bi bi-star-fill"></i>
+											</div>
+											<div class="gameNm">Mobile Legends</div>
+											<div class="desc">respon cs bagus</div>
+											<div class="name">Ikmal Frudin</div>
+											<div class="contentBot">
+												<div class="invoice text-sm">TXO**********82</div>
+												<div class="invoice text-sm">04 Sep 23</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide testimoni">
+									<div class="cards">
+										<div class="containers">
+											<div class="rate">
+												<i class="bi bi-star-fill"></i>
+												<i class="bi bi-star-fill"></i>
+												<i class="bi bi-star-fill"></i>
+												<i class="bi bi-star-fill"></i>
+												<i class="bi bi-star-fill"></i>
+											</div>
+											<div class="gameNm">Free Fire</div>
+											<div class="desc">Prosesny cepet bett jirr</div>
+											<div class="name">Donny Sapaat</div>
+											<div class="contentBot">
+												<div class="invoice text-sm">TXO**********45</div>
+												<div class="invoice text-sm">14 Aug 23</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide testimoni">
+									<div class="cards">
+										<div class="containers">
+											<div class="rate">
+												<i class="bi bi-star-fill"></i>
+												<i class="bi bi-star-fill"></i>
+												<i class="bi bi-star-fill"></i>
+												<i class="bi bi-star-fill"></i>
+												<i class="bi bi-star-fill"></i>
+											</div>
+											<div class="gameNm">Free Fire</div>
+											<div class="desc">cepet bgt mantul</div>
+											<div class="name">Cindy Agustin</div>
+											<div class="contentBot">
+												<div class="invoice text-sm">TXO**********76</div>
+												<div class="invoice text-sm">10 Aug 23</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide testimoni">
+									<div class="cards">
+										<div class="containers">
+											<div class="rate">
+												<i class="bi bi-star-fill"></i>
+												<i class="bi bi-star-fill"></i>
+												<i class="bi bi-star-fill"></i>
+												<i class="bi bi-star-fill"></i>
+												<i class="bi bi-star-fill"></i>
+											</div>
+											<div class="gameNm">League Of Legends</div>
+											<div class="desc">cepet aman damai bang</div>
+											<div class="name">Rendy Arisyah</div>
+											<div class="contentBot">
+												<div class="invoice text-sm">TXO**********34</div>
+												<div class="invoice text-sm">14 Jul 23</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide testimoni">
+									<div class="cards">
+										<div class="containers">
+											<div class="rate">
+												<i class="bi bi-star-fill"></i>
+												<i class="bi bi-star-fill"></i>
+												<i class="bi bi-star-fill"></i>
+												<i class="bi bi-star-fill"></i>
+												<i class="bi bi-star-fill"></i>
+											</div>
+											<div class="gameNm">Apex Legends</div>
+											<div class="desc">manteppp bgttt</div>
+											<div class="name">Adam Setiawan</div>
+											<div class="contentBot">
+												<div class="invoice text-sm">TXO**********33</div>
+												<div class="invoice text-sm">14 Jul 23</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide testimoni">
+									<div class="cards">
+										<div class="containers">
+											<div class="rate">
+												<i class="bi bi-star-fill"></i>
+												<i class="bi bi-star-fill"></i>
+												<i class="bi bi-star-fill"></i>
+												<i class="bi bi-star-fill"></i>
+												<i class="bi bi-star-fill"></i>
+											</div>
+											<div class="gameNm">Pubg Mobile</div>
+											<div class="desc">Recomend banget</div>
+											<div class="name">Rizky Saputra</div>
+											<div class="contentBot">
+												<div class="invoice text-sm">TXO**********32</div>
+												<div class="invoice text-sm">14 Jul 23</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide testimoni">
+									<div class="cards">
+										<div class="containers">
+											<div class="rate">
+												<i class="bi bi-star-fill"></i>
+												<i class="bi bi-star-fill"></i>
+												<i class="bi bi-star-fill"></i>
+												<i class="bi bi-star-fill"></i>
+												<i class="bi bi-star-fill"></i>
+											</div>
+											<div class="gameNm">Mobile Legends</div>
+											<div class="desc">prosesnya cepet</div>
+											<div class="name">Surya Purnama</div>
+											<div class="contentBot">
+												<div class="invoice text-sm">TXO**********31</div>
+												<div class="invoice text-sm">14 Jul 23</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide testimoni">
+									<div class="cards">
+										<div class="containers">
+											<div class="rate">
+												<i class="bi bi-star-fill"></i>
+												<i class="bi bi-star-fill"></i>
+												<i class="bi bi-star-fill"></i>
+												<i class="bi bi-star-fill"></i>
+												<i class="bi bi-star-fill"></i>
+											</div>
+											<div class="gameNm">Mobile Legends</div>
+											<div class="desc">mantap bos</div>
+											<div class="name">Matio Pangabenan</div>
+											<div class="contentBot">
+												<div class="invoice text-sm">TXO**********30</div>
+												<div class="invoice text-sm">25 May 23</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- TESTIMONI END OSAKAA -->
+
+		<!-- FOOTER START OSAKAA -->
+	<div class="footer">
+		<div class="container">
+			<div class="logo">
+				<img src="./assets/img/logo.png" alt="logo"/>
+				<div class="names">Takashopgame</div>
+			</div>
+			<div class="desc mx-auto">
+				 Takashopgame menyediakan layanan Top up game dan Reseller Voucher Game termurah dan terpercaya di Indonesia.
+			</div>
+			<div class="sosmed">
+				<a href="https://instagram.com/takashopgame.id" class="containers text-white"><i class="bi bi-instagram"></i></a>
+				<a href="https://wa.me/6289654791642" class="containers text-white"><i class="bi bi-whatsapp"></i></a>
+				<a href="https://www.youtube.com/channel/UCUU0TcNiiy4Tmp-kGPf9Muw" class="containers text-white"><i class="bi bi-youtube"></i></a>
+			</div>
+			<div class="bottomFoot">
+				<div class="copyright">
+					<div class="text">
+						 Copyright ©
+						<script>document.write(new Date().getFullYear());</script>
+						<a href="#" class="text-white">Takashopgame</a> - All Right Reserved
+					</div>
+				</div>
+				<div class="linkFoot">
+					<div class="containers">
+						<a href="#">Home</a>
+						<a href="#produk">Topup</a>
+						<a href="./terms.html">Syarat & Ketentuan</a>
+						<a href="https://s.id/takashopgame">Hubungi Kami</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</section>
+
+	<!-- FOOTER END OSAKAA -->
+
+	<!-- BUTTON SCROLL TO UP OSAKAA -->
+	<a href="https://wa.me/6289654791642" class="floating-contact d-flex justify-content-center gap-1 flex-column contact" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Contact CS Kami Via Whatsapp"><span class="text-white">CHAT CS</span></a>
+	<a id="backToTopBtn" onclick="scrollToTop()" class="floating-btu d-flex justify-content-center gap-1 flex-column contact" tabindex="0"><i class="bi bi-arrow-up"></i></a>
+
+	<script src="./assets/js/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+	<script src="./assets/js/script.js"></script>
+	<script src="./assets/js/key.js"></script>
+	
+	<script>
+		// document.addEventListener('DOMContentLoaded', function() {
+		// 	var modal = new bootstrap.Modal(document.getElementById('modal-home'));
+		// 	var modalReadBtn = document.getElementById('modal_read');
+		// 	var sudahBacaStatus = localStorage.getItem('sudahBaca');
+		// 	setTimeout(function() {
+		// 		if (!sudahBacaStatus || (new Date() - new Date(sudahBacaStatus)) > 24 * 60 * 60 * 1000) {
+		// 			modal.show();
+		// 		}
+		// 	}, 30000);
+		// 	modalReadBtn.addEventListener('click', function() {
+		// 		localStorage.setItem('sudahBaca', new Date());
+		// 		modal.hide();
+		// 	});
+		// 	setTimeout(function() {
+		// 		localStorage.removeItem('sudahBaca');
+		// 	}, 24 * 60 * 60 * 1000);
+		// 	modal.show();
+		// });
+		// Set the date flash sale
+					var countDownDate = new Date("2024-07-31").getTime();
+			const flasSale = document.querySelector(".containerFlashSale");
+			if (flasSale) {
+				var x = setInterval(function () {
+					var now = new Date().getTime();
+					var distance = countDownDate - now;
+					var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+					var hours = Math.floor(
+						(distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+					);
+					var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+					var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+					document.querySelector(".day").innerHTML = days;
+					document.querySelector(".hours").innerHTML = hours;
+					document.querySelector(".minute").innerHTML = minutes;
+					document.querySelector(".second").innerHTML = seconds;
+					if (distance < 0) {
+						clearInterval(x);
+						document.getElementById("demo").innerHTML = "EXPIRED";
+					}
+				}, 1000);
+			}
+		function closeInstall() {
+            const el = document.getElementById("pwa")
+            el.classList.add('hidden')
+        }
+	</script>
+	</body>
+	</html>

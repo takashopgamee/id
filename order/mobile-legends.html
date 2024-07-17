@@ -614,12 +614,12 @@
 
             // Bangun pesan untuk WhatsApp
             var message = "*_Detail Pesanan :_*\n" +
-            "_User ID :_ " + userID + "\n" +
-            "_Server :_ " + server + "\n" +
-            "_Produk :_ " + productLabel + "\n" +
-            "_Harga :_ " + price + "\n" +
-            "_Metode Pembayaran :_ " + paymentMethod + "\n" +
-            "_No. WhatsApp :_ " + wa;
+            "_⌗ User ID :_ " + userID + "\n" +
+            "_⌗ Server :_ " + server + "\n" +
+            "_⌗ Produk :_ " + productLabel + "\n" +
+            "_⌗ Harga :_ " + price + "\n" +
+            "_⌗ Metode Pembayaran :_ " + paymentMethod + "\n" +
+            "_⌗ No. WhatsApp :_ " + wa;
             var whatsappLink = "https://api.whatsapp.com/send?phone=6289654791642&text=*Halo%20Admin,%20Saya%20Mau%20TopUp%20Games*.%0A%0A" + encodeURIComponent(message);
             // Buka link WhatsApp di tab baru
             window.open(whatsappLink, '_blank');
